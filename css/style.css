@@ -319,6 +319,11 @@ main.panel-open {
 	color: var(--color-text-muted);
 }
 
+.lang-tag {
+	color: var(--color-accent-blue);
+	font-weight: 600;
+}
+
 .legend {
 	position: absolute;
 	left: 12px;

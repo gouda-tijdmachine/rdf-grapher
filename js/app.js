@@ -319,7 +319,12 @@ import { createGraph, PANEL_MIN_WIDTH, GRAPH_MIN_WIDTH } from './d3.js';
           } else if(o.type==='bnode'){
             obj.textContent = o.value.startsWith('_:') ? o.value : '_:'+o.value;
           } else {
-            const literalValue = document.createElement('span'); literalValue.textContent = o.value + (o['xml:lang']? ` (@${o['xml:lang']})` : '');
+            const literalValue = document.createElement('span'); literalValue.textContent = o.value;
+            if(o['xml:lang']){
+              literalValue.appendChild(document.createTextNode(' '));
+              const langTag = document.createElement('sup'); langTag.className = 'lang-tag'; langTag.textContent = `@${o['xml:lang']}`;
+              literalValue.appendChild(langTag);
+            }
             obj.appendChild(literalValue);
             if(o.datatype){
               const datatypeSpan = document.createElement('span'); datatypeSpan.className = 'literal-meta'; datatypeSpan.textContent = `^^${compactIri(o.datatype)}`;
