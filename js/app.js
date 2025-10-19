@@ -285,7 +285,10 @@ import { createGraph, PANEL_MIN_WIDTH, GRAPH_MIN_WIDTH } from './d3.js';
 
       if(uriInput.value.trim() !== node.id){
         const subjectActions = document.createElement('div'); subjectActions.className = 'panel-actions';
-        const makeRootBtn = document.createElement('button'); makeRootBtn.type = 'button'; makeRootBtn.textContent = 'Explore from this subject';
+        const makeRootBtn = document.createElement('button'); 
+        makeRootBtn.type = 'button'; 
+        makeRootBtn.textContent = 'Explore from this subject';
+        makeRootBtn.className = 'primary';
         makeRootBtn.addEventListener('click', async ()=>{
           uriInput.value = node.id;
           panel.classList.add('hidden');

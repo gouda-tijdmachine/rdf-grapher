@@ -1,22 +1,20 @@
 :root {
-	--color-bg-primary: #0f172a;        	/* slate-900 */
+	--color-bg-primary: #0f172a;
 	--color-bg-secondary: #0b102a;
-	--color-panel: #111827;             /* gray-900 */
+	--color-panel: #111827;
 	--color-text-primary: #ffffff;
-	--color-text-muted: #cbd5e1;        /* slate-300 */
-	--color-accent-blue: #38bdf8;       /* sky-400 */
-	--color-accent-blue-light: #0ea5e9;
-	--color-accent-blue-dark: #0284c7;
-	--color-accent-blue-rgb: 56, 189, 248;
-	--color-accent-green: #34d399;      /* emerald-400 */
+	--color-text-muted: #cbd5e1;
+	--color-accent-blue: #3891b1;
+	--color-accent-blue-rgb: 56, 145, 177;
+	--color-accent-green: #533b3b ;
 	--color-accent-green-rgb: 52, 211, 153;
 	--color-node-uri: var(--color-accent-blue);
 	--color-node-bnode: var(--color-accent-green);
-	--color-node-literal: #fbbf24;
-	--color-status-error: #f87171;      /* red-400 */
-	--color-edge: #64748b;              /* slate-500 */
+	--color-node-literal: #d22e25;
+	--color-status-error: #f87171;
+	--color-edge: #64748b;
 	--color-surface: #0b1224;
-	--color-border-dark: #1f2937;       /* gray-800 */
+	--color-border-dark: #1f2937;
 	--color-border-muted: #334155;
 	--color-border-strong: #374151;
 	--color-link: #93c5fd;
@@ -31,14 +29,12 @@
 	--color-text-primary: #0f172a;
 	--color-text-muted: #475569;      
 	--color-accent-blue: #0284c7;     
-	--color-accent-blue-light: #38bdf8;
-	--color-accent-blue-dark: #0ea5e9;
-	--color-accent-blue-rgb: 2, 132, 199;
-	--color-accent-green: #0d9488;    
+	--color-accent-blue-rgb: 56, 145, 177;
+	--color-accent-green: #533b3b ;    
 	--color-accent-green-rgb: 13, 148, 136;
 	--color-node-uri: var(--color-accent-blue);
 	--color-node-bnode: var(--color-accent-green);
-	--color-node-literal: #f59e0b;
+	--color-node-literal: #d22e25;
 	--color-status-error: #dc2626;    
 	--color-edge: #94a3b8;            
 	--color-surface: #f1f5f9;
@@ -118,9 +114,9 @@ button {
 }
 
 button.primary {
-	background: linear-gradient(180deg, var(--color-accent-blue-light), var(--color-accent-blue-dark));
+	background: var(--color-accent-blue);
 	border: none;
-	color:var(--color-bg-primary);
+	color:var(--color-bg-primary)!important;
 }
 
 button.secondary {
@@ -482,7 +478,7 @@ body.modal-open {
 
 .panel-actions button {
 	flex: 1;
-	background: linear-gradient(180deg, var(--color-accent-blue-light), var(--color-accent-blue-dark));
+	background: var(--color-accent-blue);
 	border: none;
 	color: var(--color-text-primary);
 	font-weight: 600;
