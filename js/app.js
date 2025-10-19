@@ -8,7 +8,6 @@ import { createGraph, PANEL_MIN_WIDTH, GRAPH_MIN_WIDTH } from './d3.js';
   const uriInput = document.getElementById('uri');
   const suggestions = document.getElementById('suggestions');
   const loadBtn = document.getElementById('load');
-  const connectBtn = document.getElementById('connect');
   const mainEl = document.querySelector('main');
   const panel = document.getElementById('panel');
   const panelResizer = document.getElementById('panel-resizer');
@@ -446,19 +445,6 @@ import { createGraph, PANEL_MIN_WIDTH, GRAPH_MIN_WIDTH } from './d3.js';
   // Buttons & keyboard
   loadBtn.addEventListener('click', loadResource);
   uriInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ loadResource(); }});
-  connectBtn.addEventListener('click', async ()=>{
-    handleEndpointUpdated(true);
-    const endpoint = endpointInput.value.trim();
-    if(!endpoint){
-      setStatus('Provide an endpoint before checking.', 'error');
-      return;
-    }
-    try{
-      setStatus('Pinging endpoint…');
-      await sparqlQuery(endpoint, 'ASK { ?s ?p ?o }');
-      setStatus('Endpoint looks OK.');
-    }catch(err){ setStatus('Endpoint check failed: '+err.message, 'error'); }
-  });
   closePanel.addEventListener('click', ()=>{
     panel.classList.add('hidden');
     mainEl.classList.remove('panel-open');
